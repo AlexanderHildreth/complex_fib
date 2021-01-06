@@ -3,12 +3,12 @@ import axios from 'axios';
 
 class Fib extends Component {
     state = {
-        seenindexes: [],
+        seenIndexes: [],
         values: {},
         index: ''
     };
 
-    componentDidMount() {
+    UNSAFE_componentDidMount() {
         this.fetchValues();
         this.fetchIndexes();
     }
