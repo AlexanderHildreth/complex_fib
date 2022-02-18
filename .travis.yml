@@ -16,7 +16,7 @@ after_success:
   - docker build -t ahildreth/complex_fib-multi_server ./server
   - docker build -t ahildreth/complex_fib-multi_worker ./worker
   # Login to the Docker CLI
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to Docker Hub
   - docker push ahildreth/complex_fib-multi_client
   - docker push ahildreth/complex_fib-multi_nginx

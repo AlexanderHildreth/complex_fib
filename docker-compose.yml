@@ -45,7 +45,7 @@ services:
       context: ./client
     volumes:
       - /app/node_modules
-      - ./worker:/app
+      - ./client:/app
 
   worker:
     build:
