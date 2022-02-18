@@ -5,7 +5,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t ahildreth/complex_fib_react-test -f ./client/Dockerfile.dev .
+  - docker build -t ahildreth/complex_fib_react-test -f ./client/Dockerfile.dev ./client
 
 script:
   - docker run -e CI=true ahildreth/complex_fib_react-test npm test -- --coverage
