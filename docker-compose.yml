@@ -4,14 +4,14 @@ services:
     image: 'postgres:latest'
     environment:
       - POSTGRES_PASSWORD=postgres_password
-  
+
   redis:
     image: 'redis:latest'
 
   nginx:
-    depends_on:
-      - api
-      - client
+    # depends_on:
+    #   - api
+    #   - client
     restart: always
     build:
       dockerfile: Dockerfile.dev
@@ -46,7 +46,7 @@ services:
     volumes:
       - /app/node_modules
       - ./client:/app
-  
+
   worker:
     build:
       dockerfile: Dockerfile.dev
@@ -57,4 +57,3 @@ services:
     environment:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
-  
