@@ -22,3 +22,15 @@ after_success:
   - docker push ahildreth/complex_fib-multi_nginx
   - docker push ahildreth/complex_fib-multi_server
   - docker push ahildreth/complex_fib-multi_worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-west-1"
+  app: "Fibonacci-multi"
+  env: "Fibonaccimulti-env"
+  bucket_name: "elasticbeanstalk-eu-west-1-477122900110"
+  bucket_path: "Fibonacci-multi"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
